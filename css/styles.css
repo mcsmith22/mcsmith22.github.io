@@ -1,0 +1,109 @@
+/* Basic Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #4CAF50;
+    padding: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #fff;
+}
+
+/* Header */
+header {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Main Section */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main section {
+    margin-bottom: 2rem;
+}
+
+main h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+/* Project Cards */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-card {
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.project-card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
