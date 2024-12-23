@@ -1,0 +1,108 @@
+/*--------------------------------------------------
+ styles.css
+ Example minimal styling for a personal portfolio
+--------------------------------------------------*/
+
+/*
+ 1. Reset/normalize some default styles
+ --------------------------------------------------*/
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* optional for smoother anchor scrolling */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ 2. Base page styling
+ --------------------------------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fdfdfd;
+    margin: 0;
+}
+
+/*
+ 3. Header
+ --------------------------------------------------*/
+header {
+    background-color: #4CAF50; /* a green header */
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/*
+ 4. Main Section
+ --------------------------------------------------*/
+section {
+    max-width: 800px;  /* limit content width for readability */
+    margin: 2rem auto;
+    padding: 0 1rem;   /* some side padding for smaller screens */
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+section ul {
+    list-style: none;  /* remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+section li {
+    margin-bottom: 0.5rem;
+}
+
+section li a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+section li a:hover {
+    color: #388E3C;
+}
+
+/*
+ 5. Footer
+ --------------------------------------------------*/
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
