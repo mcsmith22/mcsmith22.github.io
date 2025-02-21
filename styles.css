@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'cpro';
+    src: url('images/Iosevka-Term.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cpro';
+    src: url('images/Iosevka-Bold.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    padding: 15px;
+    font-family: "cpro", Monaco, monospace;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0px;
+    padding: 25px 0 15px 0;
+}
+p {
+    margin: 0px;
+}
+.profession span {
+    display: block;
+}
+td {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.main {
+    margin: 50px auto 30px;
+    width: 70%;
+}
+
+.avatar {
+    height: 14em;
+    width: 14em;
+    background: url('images/profile.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.subtitle {
+    font-size: 1.5em;
+}
+
+.profession {
+    margin-top: 6px;
+    line-height: 2em;
+}
+.profession a {
+    color: #000;
+}
+.profession a:hover {
+    text-decoration: none;
+    color: #3f51b5;
+}
+.uni a {
+    color: #000;
+}
+.uni a:hover {
+    text-decoration: none;
+    color: #3f51b5;
+}
+.profession a, .uni a {
+    padding: 4px;
+    background-color: #F4FEFE;
+}
+
+.social {
+    max-width: 400px;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+.social a {
+    color: inherit;
+}
+.social a:hover {
+    color: #3f51b5;
+    text-decoration: none;
+}
+.social p {
+    padding-top: 6px;
+}
+
+.twit:before {
+    content: "\f099";
+}
+.link:before {
+    content: "\f0e1";
+}
+
+
+#pixel {
+    height: 1px !important;
+    width: 1px !important;
+    border-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@media (max-width:520px) {
+    h1 {
+        padding-bottom: 20px;
+        font-size: 1.8em;
+    }
+    td {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+    .main {
+        margin: 30px auto 30px;
+    }
+    .social {
+        margin-bottom: 50px;
+    }
+    .social p {
+        padding-top: 6px;
+        font-size: 12px;
+    }
+    .profession {
+        margin-top: 8px;
+    }
+    .uni {
+        line-height: 2em;
+    }
+    .profession a, .uni a {
+        font-size: 12px;
+    }
+    .fa-4x {
+        font-size: 3em;
+    }
+    .social img {
+        height: 42px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+}
