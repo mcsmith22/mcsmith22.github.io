@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9651f713-4645-4d83-9938-e6363617f5de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/favicons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicons/site.webmanifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Iosevka-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Iosevka-Term.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" />
-    </list>
+    <list default="true" id="9651f713-4645-4d83-9938-e6363617f5de" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +74,7 @@
       <updated>1734990548162</updated>
       <workItem from="1734990549932" duration="197000" />
       <workItem from="1734990772546" duration="23765000" />
-      <workItem from="1740167124553" duration="455000" />
+      <workItem from="1740167124553" duration="730000" />
     </task>
     <servers />
   </component>
