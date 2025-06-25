@@ -29,6 +29,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const avatar = document.querySelector('.avatar');
+  const total   = 10; 
+  const n       = Math.floor(Math.random() * total) + 1; 
+  avatar.style.backgroundImage = `url('images/profile${n}.jpg')`;
+});
+</script>
+
 <body>
 <div class="main">
     <div class="avatar"></div>
