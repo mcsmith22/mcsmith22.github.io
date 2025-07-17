@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: url("images/owl-sticker.png") repeat 0 0 / 120px 120px;
+      /*background: url("images/owl-sticker.png") repeat 0 0 / 120px 120px;*/
       overflow-x: hidden;
     }
     h1 {
@@ -93,6 +93,39 @@
     }
 
     @media (prefers-reduced-motion: reduce) { .emoji { animation: none; } }
+
+    .quote-box {
+      font-family: "Impact", "Arial Black", sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: #000;
+
+      text-shadow:
+           4px   4px   0 #fff,
+          -4px   4px   0 #fff,
+           4px  -4px   0 #fff,
+          -4px  -4px   0 #fff,
+           4px   0     0 #fff,
+          -4px   0     0 #fff,
+           0     4px   0 #fff,
+           0    -4px   0 #fff;
+
+      max-width: 900px;
+      margin: 10rem auto;
+      padding: 0;
+    }
+
+    /* first line left‑aligned, second right‑aligned */
+    .quote-box .left  { display: block; text-align: left;  }
+    .quote-box .right { display: block; text-align: right; }
+
+    /* scale down on narrow screens */
+    @media (max-width: 600px) { .quote-box { font-size: 2.3rem; } }
+
+
+
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -106,7 +139,14 @@
   </script>
 </head>
 <body>
-  <div class="container">
+
+  <div class="quote-box">
+    <span class="right">...can we at least be enemies?</span>
+  </div>
+
+
+
+<!--   <div class="container">
     <h1>My Long Apologetic Love Playlist</h1>
     <iframe
       src="https://open.spotify.com/embed/playlist/3kmgDdJMdevBJk6f15c8Vo?utm_source=generator"
@@ -145,59 +185,59 @@ He told me in the original Job is left unrewarded at the end."
   </div>
 
   <audio id="bgAudio" src="audio/bg-song.mp3" preload="auto" loop></audio>
-
+ -->
   <script>
-    const EMOJIS = ["🐞", "🐈‍⬛"];
-    setInterval(() => {
-      const el = document.createElement("div");
-      el.className = "emoji";
-      el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
-      el.style.left = Math.random() * 100 + "vw";
-      el.style.animationDuration = 3 + Math.random() * 2 + "s";
-      document.body.appendChild(el);
-      el.addEventListener("animationend", () => el.remove());
-    }, 300);
+    // const EMOJIS = ["🐞", "🐈‍⬛"];
+    // setInterval(() => {
+    //   const el = document.createElement("div");
+    //   el.className = "emoji";
+    //   el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+    //   el.style.left = Math.random() * 100 + "vw";
+    //   el.style.animationDuration = 3 + Math.random() * 2 + "s";
+    //   document.body.appendChild(el);
+    //   el.addEventListener("animationend", () => el.remove());
+    // }, 300);
 
   
-    document.addEventListener("click", (e) => {
-      const tag = e.target.tagName.toLowerCase();
-      if (["iframe", "button", "a"].includes(tag)) return;
+    // document.addEventListener("click", (e) => {
+    //   const tag = e.target.tagName.toLowerCase();
+    //   if (["iframe", "button", "a"].includes(tag)) return;
 
-      const img = document.createElement("img");
-      img.src = "images/teddy.png";
-      img.alt = "teddy";
-      img.className = "teddy";
+    //   const img = document.createElement("img");
+    //   img.src = "images/teddy.png";
+    //   img.alt = "teddy";
+    //   img.className = "teddy";
 
-      img.style.left = e.pageX - 40 + "px";
-      img.style.top  = e.pageY - 40 + "px";
+    //   img.style.left = e.pageX - 40 + "px";
+    //   img.style.top  = e.pageY - 40 + "px";
 
-      const rot = Math.random() * 360;
-      img.style.transform = `rotate(${rot}deg)`;
-      document.body.appendChild(img);
+    //   const rot = Math.random() * 360;
+    //   img.style.transform = `rotate(${rot}deg)`;
+    //   document.body.appendChild(img);
 
-      requestAnimationFrame(() => {
-        img.style.transform += " scale(0.8)";
-        setTimeout(() => {
-          img.style.transform = `rotate(${rot}deg) scale(1)`;
-        }, 150);
-      });
-    });
+    //   requestAnimationFrame(() => {
+    //     img.style.transform += " scale(0.8)";
+    //     setTimeout(() => {
+    //       img.style.transform = `rotate(${rot}deg) scale(1)`;
+    //     }, 150);
+    //   });
+    // });
 
-    const playBtn    = document.getElementById("playBtn");
-    const playWrap   = document.getElementById("playBtnWrap");
-    const storyCard  = document.getElementById("storyCard");
-    const storyBlock = document.getElementById("storyBlock");
-    const bgAudio    = document.getElementById("bgAudio");
+    // const playBtn    = document.getElementById("playBtn");
+    // const playWrap   = document.getElementById("playBtnWrap");
+    // const storyCard  = document.getElementById("storyCard");
+    // const storyBlock = document.getElementById("storyBlock");
+    // const bgAudio    = document.getElementById("bgAudio");
 
-    playBtn.addEventListener("click", async () => {
-      playWrap.style.opacity = "0";
-      setTimeout(() => playWrap.remove(), 400);
+    // playBtn.addEventListener("click", async () => {
+    //   playWrap.style.opacity = "0";
+    //   setTimeout(() => playWrap.remove(), 400);
 
-      storyCard.style.display = "block";
-      requestAnimationFrame(() => storyBlock.classList.add("visible"));
+    //   storyCard.style.display = "block";
+    //   requestAnimationFrame(() => storyBlock.classList.add("visible"));
 
-      try { await bgAudio.play(); } catch (_) { /* autoplay blocked? ignore */ }
-    });
+    //   try { await bgAudio.play(); } catch (_) { /* autoplay blocked? ignore */ }
+    // });
   </script>
 </body>
 </html>
