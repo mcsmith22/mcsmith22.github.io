@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A..... G..</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: url("images/owl-sticker.png") repeat 0 0 / 120px 120px;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      margin: 0 0 1.5rem;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: none;
+      margin: 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 13%);
+      backdrop-filter: blur(4px);
+      position: relative;
+      z-index: 1;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+
+    .container:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    #denial {
+      background: url("images/shirt.jpg");
+      background-size: cover;
+      color: white;
+    }
+
+    #anger {
+      background: url("images/texts.png");
+      background-size: cover;
+      color: white;
+    }
+
+    #bargaining {
+      background: url("images/pizza.jpg");
+      background-size: cover;
+      color: white;
+    }
+
+    #depression {
+      background: url("images/hoboken.jpg");
+      background-size: cover;
+      color: white;
+    }
+
+    #acceptance {
+      background: url("images/walking.jpg");
+      background-size: cover;
+      color: white;
+    }
+
+    #hope {
+      background: url("images/praying.jpg");
+      background-size: cover;
+      color: white;
+    }
+
+    .story-card { 
+      display: block; 
+      margin: 10rem;
+      background: url("images/shoes.png");
+    }
+
+    iframe {
+      transition: opacity 0.3s ease;
+    }
+
+    .container:hover iframe {
+      opacity: 0;
+    }
+
+    #playBtnWrap {
+      text-align: center;
+      margin-top: 10rem;
+    }
+    #playBtn {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      border: none;
+      border-radius: 0.6rem;
+      background: #333;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.4s ease;
+    }
+
+    #storyBlock {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      background: rgba(255, 255, 255, 0.7);
+      margin-top: 25rem;
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid #555;
+      border-radius: 0.8rem;
+      margin: 0;
+      /*opacity: 0;*/
+      /*visibility: hidden;*/
+      transition: opacity 0.6s ease;
+    }
+    #storyBlock.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .emoji {
+      position: fixed;
+      top: -3rem;
+      font-size: 2.25rem;
+      pointer-events: none;
+      animation: fall linear forwards;
+      z-index: 0;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+      }
+    }
+
+    .teddy {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      pointer-events: none;
+      user-select: none;
+      transform-origin: center;
+      transition: transform 0.2s ease-out;
+      z-index: 2;
+    }
+
+    @media (prefers-reduced-motion: reduce) { .emoji { animation: none; } }
+
+    .quote-box {
+      font-family: "Impact", "Arial Black", sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: #000;
+
+      text-shadow:
+           4px   4px   0 #fff,
+          -4px   4px   0 #fff,
+           4px  -4px   0 #fff,
+          -4px  -4px   0 #fff,
+           4px   0     0 #fff,
+          -4px   0     0 #fff,
+           0     4px   0 #fff,
+           0    -4px   0 #fff;
+
+      max-width: 900px;
+      margin: 10rem auto;
+      padding: 0;
+    }
+
+    /* first line left‑aligned, second right‑aligned */
+    .quote-box .left  { display: block; text-align: left;  }
+    .quote-box .right { display: block; text-align: right; }
+
+    /* scale down on narrow screens */
+    @media (max-width: 600px) { .quote-box { font-size: 2.3rem; } }
+
+
+
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KM7YLMLPTY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KM7YLMLPTY');
+  </script>
+</head>
+<body>
+
+
+<!-- <div class="container">
+    <h1>My Long Apologetic Love Playlist</h1>
+    <iframe
+      src="https://open.spotify.com/embed/playlist/3kmgDdJMdevBJk6f15c8Vo?utm_source=generator"
+      style="border-radius:12px;width:100%;height:352px"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+  </div> -->
+<div class="playlist-grid">
+  <div id="denial" class="container">
+    <h1>Denial</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3kmgDdJMdevBJk6f15c8Vo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+<div id="anger" class="container">
+    <h1>Anger</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2fknnAknAEpAOS7oPzyAV5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<div id="bargaining" class="container">
+    <h1>Bargaining</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4rXCO8o2A3E4TywVHk41cx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<div id="depression" class="container">
+    <h1>Depression</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3Tyr3SgfHlxwEIXFDv66aW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<div id="acceptance" class="container">
+    <h1>Acceptance</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3wzP5bB1gm1KZlCPkgHjez?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+<div id="hope" class="container">
+    <h1>Hope</h1>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3SU4LdLr2bRxJx4zRWpyWb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
+
+  <!-- <div id="playBtnWrap">
+    <button id="playBtn">▶️</button>
+  </div> -->
+
+  <div class="container story-card" id="storyCard">
+    <div id="storyBlock">
+    
+"Dear Milena,
+    I wish the world were ending tomorrow. Then I could take the next train, arrive at your doorstep in Vienna, and say: “Come with me, Milena. We are going to love each other without scruples or fear or restraint. Because the world is ending tomorrow.” Perhaps we don’t love unreasonably because we think we have time, or have to reckon with time. But what if we don't have time? Or what if time, as we know it, is irrelevant? Ah, if only the world were ending tomorrow. We could help each other very much.”
+    ― <em>Franz Kafka, Letters to Milena</em>
+    </div>
+
+
+    <div id="storyBlock">
+    
+    “I found myself remembering the day in kindergarten when the teachers showed us Dumbo, and I realized for the first time that all the kids in the class, even the bullies, rooted for Dumbo, against Dumbo's tormentors. Invariably they laughed and cheered, both when Dumbo succeeded and when bad things happened to his enemies. But they're you, I thought to myself. How did they not know? They didn't know. It was astounding, an astounding truth. Everyone thought they were Dumbo.”
+    ― <em>Elif Batuman, The Idiot</em>
+    </div>
+
+  </div>
+
+  <!-- <div id="playBtnWrap">
+    <button id="playBtn">▶️</button>
+  </div> -->
+
+  <!-- <div class="container story-card" id="storyCard">
+    <div id="storyBlock">
+"Next to Billy Joe Shaver, I consider Bob Dylan to be the greatest songwriter ever. I spent two days with him, once, and here’s the story how.
+
+Word had come to me early in my career that he liked my standup, but it seemed impossible to believe. I was asked if I wanted to have lunch with Bob Dylan at his home. Asked if I ate meat. Thought I should say no but said yes.
+
+When people say ‘surreal’ they mean ‘real’, it’s just most of your life is not very real, just repetition and routine. I went to his house and I met him. Only musician I’d ever met was one of my best friends, Billy Joe Shaver, and I told Dylan and he laughed and said he loved Billy Joe. Then he left and came back with an old vinyl of ‘Honky Tonk Heroes’ and put it on and we listened to it, all the way through, and didn’t talk. Then he talked to me at length. At length.
+
+When Bob Dylan speaks, his words seem chosen long ago, his sentences are spare, and he looks right at you, and his countenance is stone. He spoke to me for many hours over two days. There was no alcohol or drugs consumed. He was interested only in writing. I remember wishing I had secretly recorded him, and I remember trying as hard as I could to remember every word he said. I remember he talked over and over about verbs and about ‘verbifying’, how anything could be ‘verbified’. He asked me my favorite book of the Bible and I said Job, and he said his favorite was Ecclesiastes. He then told me that the book of Job I was familiar with was not the original, and then he told me the original.
+
+I began to notice his speech was naturally rich with imagery, and that listening to him had a mesmerizing effect. I noticed when looking at his face while listening to his words that it was like looking at an impressionistic painting. I cannot repeat any of what I heard that evening, but he invited me to stay the night and we ate dinner in silence. A girl cooked a beef stew and there were three other men, who I later learned were musicians. When Bob Dylan retired for the evening, I spoke freely with the three men. They took me to a recording studio in a guest house and I listened to them play. I asked them for their favorite Dylan stories. They told me, and the night happened and I didn’t sleep. I was very unknown at the time and asked why Bob Dylan had summoned me for this visit. One of the men told me.
+
+The next morning, when Dylan reappeared, the big house seemed full again. He told me he wanted me to meet someone. He took me to the guard shack and I met the guard and Dylan told the old man to tell me ‘the story’. He did and it was very funny. While the old man was telling his funny story, Bob Dylan kept looking right at me and he was laughing hard and I was too. It was very funny. We went back to the house and Dylan poured two cups of black coffee and we each drank coffee. And that is when Bob Dylan began speaking about being a writer.
+
+He said most ‘writers’ were what he called ‘stenographers’. He would put a record on his player and have me listen to it. He would have me silently read a passage from a classic book. Then Bob Dylan would explain why this was not writing, why it was stenography. One piece of fiction he had me read was one of my favorites. I saw that I had been wrong about one of my favorite pieces of fiction. Bob Dylan showed me how I had been deceived. I told him that I understood, but I did not, and I lied to Bob Dylan.
+
+A week later, I understood, and phoned him and explained and he laughed. I don’t want to say what Bob Dylan said to me but one thing that he gave me permission to tell my friends was, ‘Don’t be fooled by typists'.
+
+He told me in the original Job is left unrewarded at the end."
+
+— <em>Norm Macdonald</em>
+    </div>
+  </div> -->
+
+  <!-- <audio id="bgAudio" src="audio/bg-song.mp3" preload="auto" loop></audio> -->
+  <script>
+    const EMOJIS = ["🐞", "🐈‍⬛"];
+    setInterval(() => {
+      const el = document.createElement("div");
+      el.className = "emoji";
+      el.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(el);
+      el.addEventListener("animationend", () => el.remove());
+    }, 300);
+
+  
+    document.addEventListener("click", (e) => {
+      const tag = e.target.tagName.toLowerCase();
+      if (["iframe", "button", "a"].includes(tag)) return;
+
+      const img = document.createElement("img");
+      img.src = "images/teddy.png";
+      img.alt = "teddy";
+      img.className = "teddy";
+
+      img.style.left = e.pageX - 40 + "px";
+      img.style.top  = e.pageY - 40 + "px";
+
+      const rot = Math.random() * 360;
+      img.style.transform = `rotate(${rot}deg)`;
+      document.body.appendChild(img);
+
+      requestAnimationFrame(() => {
+        img.style.transform += " scale(0.8)";
+        setTimeout(() => {
+          img.style.transform = `rotate(${rot}deg) scale(1)`;
+        }, 150);
+      });
+    });
+
+    const playBtn    = document.getElementById("playBtn");
+    const playWrap   = document.getElementById("playBtnWrap");
+    const storyCard  = document.getElementById("storyCard");
+    const storyBlock = document.getElementById("storyBlock");
+    const bgAudio    = document.getElementById("bgAudio");
+
+    // playBtn.addEventListener("click", async () => {
+    //   playWrap.style.opacity = "0";
+    //   setTimeout(() => playWrap.remove(), 400);
+
+    //   storyCard.style.display = "block";
+    //   requestAnimationFrame(() => storyBlock.classList.add("visible"));
+
+    //   try { await bgAudio.play(); } catch (_) { /* autoplay blocked? ignore */ }
+    // });
+  </script>
+</body>
+</html>
